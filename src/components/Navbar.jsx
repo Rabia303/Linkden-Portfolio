@@ -110,7 +110,7 @@ const Navbar = () => {
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <div className="flex h-full flex-col justify-center px-8 pt-16">
+        <div className="flex h-full flex-col overflow-y-auto px-8 pb-24 pt-20 [&>*:first-child]:mt-auto [&>*:last-child]:mb-auto">
           <div className="space-y-1">
             {NAV_LINKS.map(({ id, label }, i) => (
               <a
@@ -118,7 +118,7 @@ const Navbar = () => {
                 href={`#${id}`}
                 onClick={() => setOpen(false)}
                 style={{ transitionDelay: open ? `${i * 40}ms` : "0ms" }}
-                className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-2xl font-medium transition-all duration-300 ${
+                className={`flex items-center justify-between rounded-xl px-4 py-2.5 text-xl font-medium transition-all duration-300 ${
                   open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                 } ${active === id ? "bg-purple-500/15 text-purple-300" : "text-white"}`}
               >
